@@ -16,5 +16,5 @@ func ErrorPrint(message string) {
 }
 
 func printWithPrefix(message string, prefix Prefix) {
-	fmt.Printf("%s%s%s\n", message, string(Space), prefix.Get())
+	fmt.Printf("%s%c%s\n", message, Space, prefix.Get())
 }
