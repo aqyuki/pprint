@@ -34,3 +34,33 @@ func TestNew(t *testing.T) {
 		})
 	}
 }
+
+func TestGet(t *testing.T) {
+	type args struct {
+		prefix string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "case 1",
+			args: args{
+				prefix: "Error",
+			},
+			want: "[Error]",
+		},
+	}
+
+	for _, tt := range tests {
+		prefix := pprint.DefaultPrefix{
+			Message: tt.args.prefix,
+		}
+		t.Run(tt.name, func(t *testing.T) {
+			if got := prefix.Get(); tt.want != got {
+				t.Errorf("DefaultPrefix.Get() => got : %v , want : %v", got, tt.want)
+			}
+		})
+	}
+}
