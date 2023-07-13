@@ -14,3 +14,7 @@ func CreatePrefix(fn PrefixBuilder) *CustomPrefix {
 		Builder: fn,
 	}
 }
+
+func (p CustomPrefix) Get() string {
+	return p.Builder()
+}
