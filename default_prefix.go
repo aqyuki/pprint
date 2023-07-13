@@ -1,5 +1,7 @@
 package pprint
 
+import "fmt"
+
 type (
 	DefaultPrefix struct {
 		Message string
@@ -7,7 +9,7 @@ type (
 )
 
 func (p DefaultPrefix) Get() string {
-	return p.Message
+	return fmt.Sprintf("[%s]", p.Message)
 }
 
 func (p DefaultPrefix) RegisterWord(words ...string) {}
