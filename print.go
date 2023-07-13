@@ -2,6 +2,8 @@ package pprint
 
 import (
 	"fmt"
+
+	"github.com/aqyuki/pprint/custom"
 )
 
 const (
@@ -22,6 +24,11 @@ func ErrorPrint(message string) {
 // InfoPrint print message with information prefix
 func InfoPrint(message string) {
 	prefix := New("Info")
+	printWithPrefix(message, prefix)
+}
+
+// CustomPrint print message with customized prefix
+func CustomPrint(message string, prefix custom.CustomPrefix) {
 	printWithPrefix(message, prefix)
 }
 
